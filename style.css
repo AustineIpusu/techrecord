@@ -8,6 +8,7 @@ body {
   background-size: 400% 400%;
   animation: floatBackground 15s ease infinite;
   color: hsl(0, 0%, 20%);
+  scroll-behavior: smooth;
 }
 
 @keyframes floatBackground {
@@ -23,7 +24,7 @@ header {
   padding: 40px 20px;
   text-align: center;
   border: 2px solid #ff0000;
-   box-shadow: 2px 2px 8px rgb(0, 0, 0);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0);
 }
 
 .profile-img {
@@ -33,11 +34,22 @@ header {
   margin-top: 20px;
   border: 4px solid rgb(255, 255, 255);
   object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 /* Section headings */
 section {
   padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Skills - stylish, clickable-like buttons */
@@ -78,7 +90,105 @@ section {
   border-radius: 6px;
   box-shadow: 2px 2px 10px rgb(0, 0, 0);
 }
+/* Project Showcase Styles */
+.project-showcase {
+    margin: 3rem 0;
+}
 
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-left: 5px solid #667eea;
+    margin: 2rem 0;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    color: #333;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.live-badge {
+    background: #27ae60;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.tech-stack {
+    margin: 1.5rem 0;
+}
+
+.tech-pill {
+    display: inline-block;
+    background: #f1f3f4;
+    color: #333;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 0.3rem;
+    border: 1px solid #ddd;
+}
+
+.live-demo {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.visitor-stats {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.demo-link, .code-link {
+    flex: 1;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.demo-link {
+    background: #667eea;
+    color: white;
+}
+
+.demo-link:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+}
+
+.code-link {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.code-link:hover {
+    background: #667eea;
+    color: white;
+}
 /* Contact Form */
 .contact form {
   max-width: 500px;
@@ -139,8 +249,8 @@ section {
 .social-links a {
   font-size: 28px;
   transition: transform 0.3s;
-   border: 2px solid #73ff00;
-   box-shadow: 2px 2px 8px rgb(0, 0, 0);
+  border: 2px solid #73ff00;
+  box-shadow: 2px 2px 8px rgb(0, 0, 0);
 }
 
 /* Brand Colors */
@@ -151,6 +261,7 @@ section {
 .social-links a[href*="twitter"]    { color: #000000; }
 .social-links a[href*="linkedin"]   { color: #0077B5; }
 .social-links a[href*="telegram"]   { color: #0088cc; }
+
 .social-links a:hover {
   transform: scale(1.2);
 }
@@ -162,7 +273,7 @@ footer {
   background-color: hsla(22, 45%, 45%, 0.596);
   color: #21759c;
   font-weight: bold;
-   border: 2px solid #793c19;
+  border: 2px solid #793c19;
 }
 
 /* Responsive Design */
