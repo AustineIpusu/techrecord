@@ -36,6 +36,47 @@
       <p>You're looking at it right here!</p>
     </div>
   </section>
+  <!-- Add this to your portfolio's projects section -->
+<section class="project-showcase">
+    <div class="project-card">
+        <div class="project-header">
+            <h3>🌍 AWS Serverless Visitor Counter</h3>
+            <span class="live-badge">LIVE DEMO</span>
+        </div>
+        
+        <div class="project-description">
+            <p>A real-time visitor counter built with full serverless AWS infrastructure. 
+            Features automated deployments and cost-effective scaling.</p>
+        </div>
+        
+        <div class="tech-stack">
+            <span class="tech-pill">AWS Lambda</span>
+            <span class="tech-pill">API Gateway</span>
+            <span class="tech-pill">DynamoDB</span>
+            <span class="tech-pill">S3</span>
+            <span class="tech-pill">Terraform</span>
+            <span class="tech-pill">Python</span>
+        </div>
+        
+        <div class="live-demo">
+            <div class="visitor-stats">
+                <strong>Live Visitor Count:</strong>
+                <span id="portfolioVisitorCount">Loading...</span>
+            </div>
+        </div>
+        
+        <div class="project-links">
+            <a href="http://visitor-counter-b6dd42b9.s3-website-us-east-1.amazonaws.com" 
+               target="_blank" class="demo-link">
+                🌐 View Live Website
+            </a>
+           //<ahref="https://github.com/AustineIpusu/visitor-count"
+               target="_blank" class="code-link">
+                📁 Source Code
+            </a>
+        </div>
+    </div>
+</section>
 
   <section class="contact">
     <h2>Contact Me</h2>
@@ -58,7 +99,29 @@
   </div>
 
   <footer>
-    <p>© 2025  A.A Ipusu. 
-
-    </p>All rights reserved. 
+    <p>© 2025 A.A Ipusu.</p>
+    <p>All rights reserved.</p>
   </footer>
+
+  <script>
+    // Scroll animation: fade in sections
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    sections.forEach(section => observer.observe(section));
+
+    // Show success message
+    function showSuccess() {
+      document.getElementById("success-msg").classList.remove("hidden");
+      return true;
+    }
+  </script>
+</body>
+</html>
