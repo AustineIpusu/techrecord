@@ -13,7 +13,6 @@
     <p>A Full-stack Software Developer who builds Websites and Mobile Apps with precision.</p>
     <img src="profile.jpg" alt="My Profile Image" class="profile-img" />
   </header>
-
   <section class="skills">
     <h2>Take a look!</h2>
     <ul>
@@ -24,13 +23,35 @@
       <li>CSS</li>
     </ul>
   </section>
-
+  <!-- Analog Clock Container -->
+<div class="clock-container">
+    <div class="clock">
+        <div class="hand hour-hand"></div>
+        <div class="hand minute-hand"></div>
+        <div class="hand second-hand"></div>
+        <div class="center-circle"></div>
+    <div class="number number-12">12</div>
+    <div class="number number-3">3</div>
+    <div class="number number-6">6</div>
+    <div class="number number-9">9</div>
+    <!-- Hands and center circle -->
+</div>
+    <p class="clock-text">Live web page</p>
+</div>
   <section class="projects">
-    <h2>Records</h2>
-    <div class="project-card">
-      <h3>NewsAll App</h3>
-      <p>A Mobile and TV App that gives you full access to all Local TV News Channels.</p>
+   <!-- Add this where you want the slideshow -->
+<section class="video-showcase">
+    <h2>The Records</h2>
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="project_display.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <p>EC2connect • PostgreSQL • Github...</p>
+        </div>
     </div>
+</section>
     <div class="project-card">
       <h3>Portfolio Website</h3>
       <p>You're looking at it right here!</p>
@@ -46,7 +67,7 @@
         
         <div class="project-description">
             <p>A real-time visitor counter built with full serverless AWS infrastructure. 
-            Features automated deployments and cost-effective scaling.</p>
+            This features automated deployments and cost-effective scaling.</p>
         </div>
         
         <div class="tech-stack">
@@ -123,5 +144,6 @@
       return true;
     }
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
