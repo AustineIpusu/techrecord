@@ -8,97 +8,131 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header>
-    <h1>Hi, This is Ipusu Austine A.</h1>
-    <p>A Full-stack Software Developer who builds Websites and Mobile Apps with precision.</p>
-    <img src="profile.jpg" alt="My Profile Image" class="profile-img" />
+  <!-- New Header Layout -->
+  <header class="new-header">
+    <div class="header-content">
+      <div class="profile-left">
+        <img src="profile.jpg" alt="My Profile Image" class="square-profile" />
+      </div>
+      <div class="belief-right">
+        <h1>Hi, This is Ipusu Austine A.</h1>
+        <p class="subtitle">I am a Full-stack Software Developer who builds Websites and Mobile Apps with precision.</p>
+        <div class="belief-section">
+          <h2>Mindset:</h2>
+          <p>I believe that technology should solve real-life problems. For instance, through cloud computing and 
+            full-stack development, I develop/create solutions that are not just functional but transformative. To me, every line of code is an opportunity to make life better, every architecture
+            decision is a chance to build something helpful and functional.
+          </p>
+        </div>
+      </div>
+    </div>
   </header>
-  <section class="skills">
-    <h2>Take a look!</h2>
-    <ul>
-      <li>Flutter & Dart</li>
-      <li>Firebase</li>
-      <li>JavaScript</li>
-      <li>HTML</li>
-      <li>CSS</li>
-    </ul>
-  </section>
-  <!-- Analog Clock Container -->
-<div class="clock-container">
-    <div class="clock">
-        <div class="hand hour-hand"></div>
-        <div class="hand minute-hand"></div>
-        <div class="hand second-hand"></div>
-        <div class="center-circle"></div>
-    <div class="number number-12">12</div>
-    <div class="number number-3">3</div>
-    <div class="number number-6">6</div>
-    <div class="number number-9">9</div>
-    <!-- Hands and center circle -->
-</div>
-    <p class="clock-text">Live web page</p>
-</div>
-  <section class="projects">
-   <!-- Add this where you want the slideshow -->
-<section class="video-showcase">
-    <h2>The Records</h2>
-    <div class="video-container">
-        <video autoplay muted loop playsinline>
+
+  <!-- 3-Column Middle Section -->
+  <section class="three-column-section">
+    <div class="column">
+      <h2>Expertise</h2>
+      <ul class="skills-list">
+        <li>Flutter & Dart</li>
+        <li>Cloud Architecture-- AWS</li>
+        <li>Infrastructure as Code-- Terraform</li>
+        <li>Lambda Functions-- Python</li>
+        <li>JavaScript</li>
+        <li>HTML, CSS</li>
+        <li>Database Design-- DynamoDB</li>
+        <li>CI/CD Pipelines</li>
+        <li>Firebase</li>
+      </ul>
+    </div>
+
+    <!-- Column 2: Clock/portfolio intro -->
+    <div class="column">
+      <h3>Portfolio Website</h3>
+      <div class="project-card">
+        <p>You're looking at it right here!</p>
+      </div>
+
+      <div class="clock-container">
+        <div class="clock">
+          <div class="hand hour-hand"></div>
+          <div class="hand minute-hand"></div>
+          <div class="hand second-hand"></div>
+          <div class="center-circle"></div>
+          <div class="number number-12">12</div>
+          <div class="number number-3">3</div>
+          <div class="number number-6">6</div>
+          <div class="number number-9">9</div>
+        </div>
+        <p class="clock-text"></p>
+      </div>
+    </div>
+
+    <!-- Column 3: Projects -->
+    <div class="column">
+      <h2>The records</h2>
+      
+      <!-- Video Showcase -->
+      <div class="video-showcase">
+        <div class="video-container">
+          <video autoplay muted loop playsinline>
             <source src="project_display.mp4" type="video/mp4">
             Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay">
+          </video>
+          <div class="video-overlay">
             <p>EC2connect • PostgreSQL • Github...</p>
+          </div>
         </div>
-    </div>
-</section>
-    <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>You're looking at it right here!</p>
+      </div>
+
+      <!-- AWS Project -->
+      <div class="project-card featured">
+        <div class="project-header">
+          <h3>🌍 AWS Serverless Visitor Counter</h3>
+          <span class="live-badge">LIVE DEMO</span>
+        </div>
+        <p>Real-time visitor counter built with full serverless AWS infrastructure. This features automated deployments and cost-effective scalling.</p>
+        <div class="tech-stack">
+          <span class="tech-pill">AWS Lambda</span>
+          <span class="tech-pill">API Gateway</span>
+          <span class="tech-pill">DynamoDB</span>
+          <span class="tech-pill">S3</span>
+        </div>
+        <div class="live-demo">
+          <strong>Live Visitor Count:</strong>
+          <span id="portfolioVisitorCount">Loading...</span>
+        </div>
+        <div class="project-links">
+          <a href="http://visitor-counter-b6dd42b9.s3-website-us-east-1.amazonaws.com" target="_blank">
+            🌐 View Live Website
+          </a>
+          <!--a href="https://github.com/AustineIpusu/visitor-count" target="_blank" class="code-link"-->
+            📁 Source Code
+          </a>
+        </div>
+      </div>
     </div>
   </section>
-  <!-- Add this to your portfolio's projects section -->
-<section class="project-showcase">
-    <div class="project-card">
-        <div class="project-header">
-            <h3>🌍 AWS Serverless Visitor Counter</h3>
-            <span class="live-badge">LIVE DEMO</span>
-        </div>
-        
-        <div class="project-description">
-            <p>A real-time visitor counter built with full serverless AWS infrastructure. 
-            This features automated deployments and cost-effective scaling.</p>
-        </div>
-        
-        <div class="tech-stack">
-            <span class="tech-pill">AWS Lambda</span>
-            <span class="tech-pill">API Gateway</span>
-            <span class="tech-pill">DynamoDB</span>
-            <span class="tech-pill">S3</span>
-            <span class="tech-pill">Terraform</span>
-            <span class="tech-pill">Python</span>
-        </div>
-        
-        <div class="live-demo">
-            <div class="visitor-stats">
-                <strong>Live Visitor Count:</strong>
-                <span id="portfolioVisitorCount">Loading...</span>
-            </div>
-        </div>
-        
-        <div class="project-links">
-            <a href="http://visitor-counter-b6dd42b9.s3-website-us-east-1.amazonaws.com" 
-               target="_blank" class="demo-link">
-                🌐 View Live Website
-            </a>
-           //<ahref="https://github.com/AustineIpusu/visitor-count"
-               target="_blank" class="code-link">
-                📁 Source Code
-            </a>
-        </div>
-    </div>
-</section>
 
+  <!-- Quotes Section (FULL WIDTH - Outside the 3-column section) -->
+  <section class="quotes-section">
+    <div class="quotes-content">
+      <div class="quotes-image">
+        <img src="quotes_image.jpg" alt="Inspirational Quotes by Austine" class="square-image"/>
+      </div>
+      <div class="quotes-text">
+        <blockquote>
+          <p>"There are special ways of making people happy, and happiness is better felt when it comes in a special way"</p>
+         <p>"The reward for genuine struggle and hustle is by far greater than whatever that may be realized from the crooked strategies or manipulations aimed at obtaining favours, sympathy or for the purpose of materialistic gains"
+        </p>
+    <p>"The antelope that chooses to graze on the grasses around the lion's den is simply turning itself into daily bread which the lion may not stress himself to win"</p>
+  </blockquote>    
+        </blockquote>    
+        <p class="quote-author">- Ipusu A. Austine</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form (spans full width below columns) -->
   <section class="contact">
     <h2>Contact Me</h2>
     <form action="https://formspree.io/f/xjkrqdzg" method="POST" onsubmit="return showSuccess()">
