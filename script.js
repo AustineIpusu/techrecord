@@ -1,9 +1,6 @@
 // This code runs when the page loads
 document.addEventListener("DOMContentLoaded", function () {
     //console.log("🎯 Welcome to Ipusu A. Austine's techrecord/portfolio!");
-    
-    //initializeVisitorCounter();
-    initializeClock();
 });
 
 // Analog Clock Functionality - FIXED ACCURATE TIME
@@ -39,7 +36,7 @@ const hourDegrees = (hours % 12 / 12) * 360 + (minutes / 60) * 30 + 90;
     updateClock();
     
     // Update every second
-    setInterval(updateClock, 1000);
+    //setInterval(updateClock, 1000);
     
     console.log('✅ Accurate clock initialized!');
 }
@@ -53,6 +50,57 @@ function initializeVisitorCounter() {
     const visitorCounter = new PortfolioVisitorCounter();
     visitorCounter.init();
 };
+// Real-time Analog Clock Functionality
+function updateClock() {
+    const now = new Date();
+    const hours = now.getHours() % 12;
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    
+    // Calculate angles for clock hands
+    const hourAngle = (hours * 30) + (minutes * 0.5); // 30 degrees per hour + 0.5 degrees per minute
+    const minuteAngle = (minutes * 6) + (seconds * 0.1); // 6 degrees per minute + 0.1 degrees per second
+    const secondAngle = seconds * 6; // 6 degrees per second
+    
+    // Get clock hands
+    const hourHand = document.querySelector('.hour-hand');
+    const minuteHand = document.querySelector('.minute-hand');
+    const secondHand = document.querySelector('.second-hand');
+    
+    // Apply rotations if elements exist
+    if (hourHand) {
+        hourHand.style.transform = `translateX(-50%) rotate(${hourAngle}deg)`;
+    }
+    if (minuteHand) {
+        minuteHand.style.transform = `translateX(-50%) rotate(${minuteAngle}deg)`;
+    }
+    if (secondHand) {
+        secondHand.style.transform = `translateX(-50%) rotate(${secondAngle}deg)`;
+    }
+    
+    // Update digital time display (optional)
+    const digitalTime = now.toLocaleTimeString('en-US', { 
+        hour12: true, 
+        hour: '2-digit', 
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    
+    // If you want to show digital time somewhere
+    const clockText = document.querySelector('.clock-text');
+    if (clockText) {
+        clockText.textContent = `${digitalTime}`;
+    }
+}
+
+// Start the clock and update every second
+function initClock() {
+    //updateClock(); // Initial call
+    setInterval(updateClock, 1000); // Update every second
+}
+
+// Initialize clock when page loads
+document.addEventListener('DOMContentLoaded', initClock);
 
 // Live visitor counter for portfolio
 class PortfolioVisitorCounter {
