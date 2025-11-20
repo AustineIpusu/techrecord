@@ -331,7 +331,11 @@ section.visible {
   flex-shrink: 0; /* Prevent image from shrinking */
   margin-bottom: 0; /* Remove bottom margin */
 }
-
+.quotes-title {  /* Quotes-title Styling  */
+ font-size: 1.2rem;
+ font-style: italic;
+ color: #4c4cd6;
+}
 .square-image {
   width: 220px; /* Slightly smaller for side-by-side */
   height: 400px;
@@ -545,3 +549,4 @@ footer {
   max-width: none; /* Remove any max-width restrictions */
   margin: 0 auto;
 }
+
